@@ -1,0 +1,20 @@
+.jobs {
+  background: #fff; }
+  .jobs .job {
+    display: flex;
+    background: #ededed;
+    box-shadow: 0px 0px 1px 0px #686868; }
+    .jobs .job:nth-child(even) {
+      background: #fff; }
+    .jobs .job h1 {
+      color: #000; }
+    .jobs .job .logo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .jobs .job .logo img {
+        max-width: 150px;
+        max-height: 100px; }
+    .jobs .job .info {
+      flex: 3; }

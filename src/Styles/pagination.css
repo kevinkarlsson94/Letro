@@ -1,0 +1,15 @@
+.pagination {
+  text-align: center;
+  background: #383838;
+  padding: 10px 0;
+  margin: 0 auto;
+  border-radius: 0;
+  display: block; }
+  .pagination .page-count {
+    width: 40px;
+    color: #fff;
+    padding: 0 15px; }
+    .pagination .page-count span {
+      width: 20px; }
+    .pagination .page-count img {
+      width: 20px; }

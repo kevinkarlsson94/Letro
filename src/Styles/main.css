@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
+
+#root {
+  height: 100vh;
+  overflow-x: hidden; }
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0; }
+
+h1 {
+  font-size: 17px;
+  margin: 35px 0px;
+  color: white; }
+
+.shadow-align-tweak {
+  width: calc(100% + 2px);
+  margin-left: -1px; }
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0 !important; }
+  .navbar li a {
+    margin-top: 15px; }
+  .navbar img {
+    height: 80px; }
+
+.command-bar {
+  background-color: #383838;
+  margin-top: 25px;
+  flex-direction: row; }
+  .command-bar .form-group {
+    margin: 15px 0; }
+  .command-bar .search-input {
+    height: 50px !important; }
+  .command-bar .MuiInputBase-root-18 {
+    color: #fff !important;
+    margin: 0 10px;
+    margin-top: 1px; }
+  .command-bar .search-button {
+    margin: 10px 0;
+    width: 100%; }
+    .command-bar .search-button.disabled {
+      background: #8e0000;
+      pointer-events: none; }
+  .command-bar .select-button {
+    margin: 10px 0; }
+
+.pagination {
+  text-align: center;
+  background: #383838;
+  padding: 10px 0;
+  margin: 0 auto;
+  border-radius: 0;
+  display: block; }
+  .pagination .page-count {
+    width: 40px;
+    color: #fff;
+    padding: 0 15px; }
+    .pagination .page-count span {
+      width: 20px; }
+    .pagination .page-count img {
+      width: 20px; }
+
+.dropdown {
+  display: inline-block;
+  width: 155px;
+  margin: 0 10px; }
+
+.jobs {
+  background: #fff; }
+  .jobs .job {
+    display: flex;
+    background: #ededed;
+    box-shadow: 0px 0px 1px 0px #686868; }
+    .jobs .job:nth-child(even) {
+      background: #fff; }
+    .jobs .job h1 {
+      color: #000; }
+    .jobs .job .logo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .jobs .job .logo img {
+        max-width: 150px;
+        max-height: 100px; }
+    .jobs .job .info {
+      flex: 3; }

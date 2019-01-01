@@ -9,7 +9,7 @@ Build in React/Typescript.
 * npm start
 
 Project is served at `http://localhost:3000/`
-`
+
 I had some problem with developing on localhost using the public API, so I had to use:
 `https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi`
 

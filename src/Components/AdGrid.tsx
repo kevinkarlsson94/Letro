@@ -155,8 +155,6 @@ class AdGrid extends React.Component<{}, IAdGridState> {
             newsItem
         } = this.state;
 
-        console.log("newsItem", newsItem);
-
         const jobEntries = availableJobs && (availableJobs as any).ads || {};
 
         return (

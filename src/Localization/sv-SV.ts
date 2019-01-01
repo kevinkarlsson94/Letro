@@ -6,5 +6,6 @@ export const svLocale = {
     kommun: "Kommun",
     kategori: "Kategori",
     subKategori: "Specifik Kategori",
-    valjKategori: "Välj kategori först..."
+    valjKategori: "Välj kategori först...",
+    stang: "Stäng"
 }

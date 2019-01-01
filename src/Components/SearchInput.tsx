@@ -14,11 +14,11 @@ export const SearchInput: StatelessComponent<ISearchInputProps> = ({
 }) => (
     <FormGroup>
         <FormControl
-        type="text"
-        className="search-input"
-        value={queryText}
-        placeholder={svLocale.fritext}
-        onChange={updateSearch}
+            type="text"
+            className="search-input"
+            value={queryText}
+            placeholder={svLocale.fritext}
+            onChange={updateSearch}
         />
   </FormGroup>
 );

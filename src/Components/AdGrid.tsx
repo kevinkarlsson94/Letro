@@ -8,6 +8,7 @@ import Filters from "./Filters";
 import JobBox from "./JobBox";
 import Pagination from "./Pagination";
 import { SearchInput } from './SearchInput';
+import AdModal from "./AdModal";
 
 interface IAdGridState {
     page?: number;
@@ -18,6 +19,8 @@ interface IAdGridState {
     availableJobs?: any;
     kategori?: any;
     subKategori?: any;
+    showModal?: boolean;
+    newsItem?: any;
 }
 
 class AdGrid extends React.Component<{}, IAdGridState> {
@@ -30,7 +33,9 @@ class AdGrid extends React.Component<{}, IAdGridState> {
         kommun: null,
         lan: null,
         kategori: null,
-        subKategori: null
+        subKategori: null,
+        showModal: false,
+        newsItem: {}
     };
 
     public componentDidMount() {
@@ -96,6 +101,26 @@ class AdGrid extends React.Component<{}, IAdGridState> {
             .then(data => this.setState({ availableJobs: data, loading: false }))
     }
 
+    private getNewsItem = async (newsUrl: string) => {
+
+        const url = `${BASE_URL}${newsUrl}`;
+        console.log("url", url);
+
+        await fetch(url, 
+            {
+                mode: 'cors',
+                headers:{
+                    'Access-Control-Allow-Origin':'*'
+                }
+            })
+            .then(response => response.json())
+            .then(newsItem =>
+                this.setState(
+                { newsItem, loading: false },
+                this.toggleModal() ));
+    }
+
+
     // Kan slås ihop till en funktion
     private loadNext = () => {
         const { page } = this.state;
@@ -111,6 +136,11 @@ class AdGrid extends React.Component<{}, IAdGridState> {
         }
     }
 
+    private toggleModal = () => () => {
+        console.log("TOGGL");
+        this.setState({ showModal: !this.state.showModal });
+    }
+
     public render() {
         const {
             availableJobs,
@@ -120,8 +150,12 @@ class AdGrid extends React.Component<{}, IAdGridState> {
             kategori,
             lan,
             kommun,
-            subKategori
+            subKategori,
+            showModal,
+            newsItem
         } = this.state;
+
+        console.log("newsItem", newsItem);
 
         const jobEntries = availableJobs && (availableJobs as any).ads || {};
 
@@ -184,17 +218,20 @@ class AdGrid extends React.Component<{}, IAdGridState> {
                         </Col>
                     </Row>
 
+                    <AdModal data={newsItem} show={showModal} handleClose={this.toggleModal()} />
+
                 </Filters>
 
                 <Row className="jobs container">
                     {
-                    Object.keys(jobEntries).map((key, y) => (
+                    Object.keys(jobEntries).map((key) => (
                         <JobBox
                             key={key}
                             heading={jobEntries[key].jobHeading}
                             category={jobEntries[key].category2}
                             employmentType={jobEntries[key].employmentType}
                             image={jobEntries[key].logoUrl}
+                            onClick={() => this.getNewsItem(jobEntries[key].mUrl)}
                         />
                     ))
                     }

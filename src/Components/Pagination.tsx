@@ -1,10 +1,10 @@
-import Button from "@material-ui/core/Button";
 import * as React from "react";
 import { StatelessComponent } from "react";
+import { Button } from "react-bootstrap";
 
 interface IPaginationProps {
-    pagerNext: () => any; // kan typas till void
-    pagerPrevious: () => any; // kan typas till void
+    pagerNext: () => void;
+    pagerPrevious: () => void;
     page: number;
     loading: boolean;
 }
@@ -17,11 +17,11 @@ const Pagination: StatelessComponent<IPaginationProps> = ({
 }) => {
     return (
         <div className="pagination container shadow-align-tweak">
-            <Button size="small" variant="contained" color="secondary" onClick={pagerPrevious}>←</Button>
-            <span className="page-count">
+            <Button bsStyle="warning" onClick={pagerPrevious}>←</Button>
+            <div className="page-count">
                 {loading ? <img src={ require("../Images/pager-loader.gif") } /> : <span>{page}</span> }
-            </span>
-            <Button className={page === 10 ? "disabled" : ""} size="small" variant="contained" color="secondary" onClick={pagerNext}>→</Button>
+            </div>
+            <Button className={page === 10 ? "disabled" : ""} bsStyle="warning" onClick={pagerNext}>→</Button>
         </div>
     );
 }

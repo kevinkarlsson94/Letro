@@ -15,9 +15,15 @@ body {
 
 h1 {
   font-size: 17px;
-  margin: 35px 0px;
   color: white; }
 
 .shadow-align-tweak {
   width: calc(100% + 2px);
   margin-left: -1px; }
+
+.btn-warning {
+  background-color: #ff2172 !important;
+  border-color: #ff2172 !important; }
+  .btn-warning:focus, .btn-warning:active, .btn-warning:active {
+    background-color: #ff2172 !important;
+    border-color: #ff2172 !important; }

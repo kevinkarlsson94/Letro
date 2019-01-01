@@ -15,12 +15,18 @@ body {
 
 h1 {
   font-size: 17px;
-  margin: 35px 0px;
   color: white; }
 
 .shadow-align-tweak {
   width: calc(100% + 2px);
   margin-left: -1px; }
+
+.btn-warning {
+  background-color: #ff2172 !important;
+  border-color: #ff2172 !important; }
+  .btn-warning:focus, .btn-warning:active, .btn-warning:active {
+    background-color: #ff2172 !important;
+    border-color: #ff2172 !important; }
 
 .navbar {
   margin-bottom: 0;
@@ -57,7 +63,9 @@ h1 {
   padding: 10px 0;
   margin: 0 auto;
   border-radius: 0;
-  display: block; }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .pagination .page-count {
     width: 40px;
     color: #fff;
@@ -77,11 +85,13 @@ h1 {
   .jobs .job {
     display: flex;
     background: #ededed;
-    box-shadow: 0px 0px 1px 0px #686868; }
+    box-shadow: 0px 0px 1px 0px #686868;
+    padding: 10px 0; }
     .jobs .job:nth-child(even) {
       background: #fff; }
     .jobs .job h1 {
-      color: #000; }
+      color: #000;
+      margin: 20px 0; }
     .jobs .job .logo {
       flex: 1;
       display: flex;
@@ -92,3 +102,10 @@ h1 {
         max-height: 100px; }
     .jobs .job .info {
       flex: 3; }
+      .jobs .job .info .btn-default {
+        float: right;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        color: #fff;
+        font-size: 12px;
+        background: #ff2172 !important; }
